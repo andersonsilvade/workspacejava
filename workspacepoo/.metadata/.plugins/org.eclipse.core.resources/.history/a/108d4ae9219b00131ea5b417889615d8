@@ -1,0 +1,10 @@
+package br.com.fatec.exe5;
+
+public class Triangulo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

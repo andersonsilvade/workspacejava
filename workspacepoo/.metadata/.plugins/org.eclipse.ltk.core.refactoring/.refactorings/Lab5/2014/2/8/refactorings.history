@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;br.com.fatec.exe5&apos; to &apos;br.com.fatec.exe3&apos;&#x0D;&#x0A;- Original project: &apos;Lab5&apos;&#x0D;&#x0A;- Original element: &apos;Lab5/src/br.com.fatec.exe5&apos;&#x0D;&#x0A;- Renamed element: &apos;Lab5/src/br.com.fatec.exe3&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;br.com.fatec.exe5&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;br.com.fatec.exe5" name="br.com.fatec.exe3" qualified="false" references="true" stamp="1393090556650" textual="false" version="1.0"/>
+</session>

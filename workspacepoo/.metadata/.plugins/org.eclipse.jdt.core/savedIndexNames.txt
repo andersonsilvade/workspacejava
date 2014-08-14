@@ -1,0 +1,1 @@
+INDEX VERSION 1.126+G:\4ºADS\programaca orietada objeto\workspacepoo\.metadata\.plugins\org.eclipse.jdt.core

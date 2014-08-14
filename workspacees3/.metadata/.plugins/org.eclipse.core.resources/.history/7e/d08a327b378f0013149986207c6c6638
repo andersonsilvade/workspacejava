@@ -1,0 +1,9 @@
+
+public class MatchesNome implements Matches{
+	
+	public boolean matches(Produto p){
+		if(!p.getNome().equals(p))return false;
+		return true;
+	}
+
+}

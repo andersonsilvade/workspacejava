@@ -1,0 +1,100 @@
+package br.com.eng3.principal;
+import java.util.LinkedList;
+import java.util.List;
+
+import br.com.eng3.paises.DadosPaises;
+import br.com.eng3.tipo.Acidente;
+import br.com.eng3.principal.*;
+
+public class BDAcidente implements Subject {
+	
+	private List<Acidente>lista;
+	private List<Acidente>regiao;
+	private List<DadosPaises>paises;
+	private List<Observer> observer  = new LinkedList<Observer>(); 
+	private List<Observer>observerPais = new LinkedList<Observer>();
+	private List<Observer>observerRegiao = new LinkedList<Observer>();
+	
+	
+	
+	public BDAcidente(){
+		lista = new LinkedList<Acidente>();
+		paises = new LinkedList<DadosPaises>();
+		regiao = new LinkedList<Acidente>();
+		
+		}
+	//registrar observes
+	public void registrarObserverAcidente(Observer ob1){
+		observer.add(ob1);
+	}
+
+	public void registrarObserverPaises(Observer ob2) {
+		observerPais.add(ob2);
+		}
+	
+	public void registrarObserverRegiao(Observer ob3) {
+		observerRegiao.add(ob3);
+		
+	}
+	
+	public void registrarObserverOrdenar(Observer ob4) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	//notificar
+	
+     public void notificarObserverAdd(Acidente a){
+		for(Observer ob : observer){
+			ob.updateAcidente(a);
+			}
+	}
+	
+	public void notificarObserverPaises(DadosPaises p) {
+		for(Observer ob : observerPais){
+			ob.updatePaises(p);
+			
+		}
+		}
+	
+	public void notificarObserverRegiao(Acidente acid) {
+		try{
+		for(Observer ob : observerRegiao){
+			ob.updateRegiao(acid);
+		}
+		}catch(Exception e){
+			System.out.println("erro "+e.getMessage());
+		}
+		
+		
+	}
+
+	public void notificarObserverOrdenar(Acidente acid) {
+		for(Observer ob : observer)
+			ob.updateOrdenado(acid);
+		
+	}
+	
+	//add ao banco
+	public void addAcidente(Acidente a){
+		lista.add(a);
+		notificarObserverAdd(a);
+		notificarObserverOrdenar(a);
+		
+	
+	}
+	public void addPaises(DadosPaises dp){
+		paises.add(dp);
+		notificarObserverPaises(dp);
+	}
+	public void addRegiao(Acidente a){
+		regiao.add(a);
+		notificarObserverRegiao(a);
+	}
+	
+	
+	
+	}
+
+

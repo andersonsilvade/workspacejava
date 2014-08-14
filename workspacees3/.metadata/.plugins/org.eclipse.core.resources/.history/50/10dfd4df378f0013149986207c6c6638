@@ -1,0 +1,14 @@
+
+
+
+public class MatchesNome implements Matches{
+	
+	public boolean matches(Produto p,Produto p2){
+		if(!this.p.)
+		
+		
+		
+		
+	}
+
+}

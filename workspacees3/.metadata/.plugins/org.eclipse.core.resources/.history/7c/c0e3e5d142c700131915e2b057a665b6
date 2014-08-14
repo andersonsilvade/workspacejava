@@ -1,0 +1,90 @@
+package br.com.eng3.principal;
+import java.util.LinkedList;
+import java.util.List;
+
+import br.com.eng3.paises.DadosPaises;
+import br.com.eng3.tipo.Acidente;
+import br.com.eng3.principal.*;
+
+public class BDAcidente implements Subject {
+	
+	private List<Acidente>lista;
+	private List<DadosPaises>paises;
+	private List<Observer> observer  = new LinkedList<Observer>(); 
+	
+	
+	
+	public BDAcidente(){
+		lista = new LinkedList<Acidente>();
+		paises = new LinkedList<DadosPaises>();
+		
+		}
+	public void registrarObserver1(Observer ob1){
+		observer.add(ob1);
+	}
+	public void addAcidente(Acidente a){
+		lista.add(a);
+	
+	}
+	public void addPaises(DadosPaises dp){
+		paises.add(dp);
+	}
+	
+	public void notificarObserver1(List<Acidente> acid){
+		System.out.println(observer.size());
+		for(Observer ob : observer){
+			ob.update1(acid);
+		}
+	}
+	
+	
+	
+	
+	
+    	
+//	public void selecionarVitima(){
+//		
+//		List<Acidente> l = new LinkedList<Acidente>();
+//		   for(Object i : lista){
+//				Acidente acid = (Acidente)i;
+//				if(acid != null)l.add(acid);
+//				
+//			}
+//			  vitima.imprimirVitima(l);
+//		}
+//	public void selecionarRegiao(){
+//	    List<Acidente> l = new LinkedList<Acidente>();
+//				for(Object i : lista){
+//			Acidente acid = (Acidente) i;
+//			if(acid.getTipo() != Tipo.OUTROS)l.add(acid);
+//			
+//		}
+//		regiao.imprimirVitimaRegia(l);
+//	}
+//	
+//	public void selecionarOrdem(){
+//		List<Acidente> l = new LinkedList<Acidente>();
+//		
+//		for(Object i:lista){
+//			Acidente acid = (Acidente) i;
+//			if(ordenado != null)l.add(acid);
+//		}
+//		ordenado.imprimirOrdenado(l);
+//	}
+//	
+//	public void selecionarPais(){
+//		List<DadosPaises> p = new LinkedList<DadosPaises>();
+//		
+//		for(Object i : paises){
+//			DadosPaises dp = (DadosPaises) i;
+//			if(!paises.isEmpty()) p.add(dp);
+//			}
+//		pais.compararOutroPais(p);
+//		
+//		
+//	}
+	
+	
+	}
+
+

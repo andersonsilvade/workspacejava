@@ -1,0 +1,443 @@
+package br.com.eng3.principal;
+
+import java.text.DecimalFormat;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+
+import br.com.eng3.paises.Comparacao;
+import br.com.eng3.paises.DadosPaises;
+import br.com.eng3.paises.Paises;
+import br.com.eng3.regiao.ImprimirVitimaRegiao;
+import br.com.eng3.tipo.Acidente;
+import br.com.eng3.tipo.ImpressaoVitima;
+import br.com.eng3.tipo.ImpressaoVitimaOrdenado;
+import br.com.eng3.tipo.Tipo;
+
+public class Tela implements Observer{
+    
+	ImpressaoVitima ipv ;
+	Comparacao comp;
+	ImpressaoVitimaOrdenado ivo;
+	ImprimirVitimaRegiao ivr;
+	 LinkedList<Acidente> lista = new LinkedList<Acidente>();
+	
+	short cont = 0;
+	int somaSul = 0;
+	int somaNorte = 0;
+	int somaCentroOeste = 0;
+	int somaNordeste = 0;
+	int somaSudeste = 0;
+    
+	
+	
+	
+	//SET	
+	public void setIpv(ImpressaoVitima ipv){
+		this.ipv = ipv;
+			
+	}
+	public void setComp(Comparacao comp){
+		this.comp = comp;
+     }
+	public void setIpv(ImpressaoVitimaOrdenado ivo){
+		this.ivo = ivo;
+	}
+	public void setIvr(ImprimirVitimaRegiao ivr){
+		this.ivr = ivr;
+	}
+	//UPDATE
+	public void updateAcidente(Acidente acid) {
+		ipv.imprimirVitima(acid);
+					}
+	
+	public void updatePaises(DadosPaises dados) {
+		 comp.compararOutroPais(dados);
+		
+	}
+	public void updateRegiao(Acidente acid){
+		ivr.imprimirVitimaRegia(acid);
+	}
+	public void updateOrdenado(Acidente acid){
+		ivo.imprimirOrdenado(acid);
+		
+	}
+
+	
+	public void imprimirAuto(Acidente v){
+		
+	   Tipo t = Tipo.AUTO;	    
+		DecimalFormat formatado = new DecimalFormat("0.00");
+        if(v != null){
+		     if(v.getTipo().equals(t)){
+		    	 System.out.println("----------------------------------------------------------------");
+		    	  System.out.println("Dados referente ao ano "+v.getAno());
+					System.out.println("Tipo da vitima "+v.getTipo());
+				    System.out.println("Total de mortes "+v.getMorteTotal());
+					System.out.println("Paticipação no total  de acidentes "+formatado.format(v.getParticipacaoCategoria())+"%");
+					System.out.println("Taxa de óbito por 100 mil habitantes "+formatado.format(v.getTaxaObito()));
+					System.out.println("----------------------------------------------------------------");
+                }
+		      }
+      }
+
+	
+	public void imprimirPedestre(Acidente v){
+			Tipo t = Tipo.PEDESTRE;
+			DecimalFormat formatado = new DecimalFormat("0.00");
+			
+	        if(v != null){
+			     if(v.getTipo().equals(t)){
+			    	 System.out.println("----------------------------------------------------------------");
+			    	  System.out.println("Dados referente ao ano "+v.getAno());
+						System.out.println("Tipo da vitima "+v.getTipo());
+					    System.out.println("Total de mortes "+v.getMorteTotal());
+						System.out.println("Paticipação no total  de acidentes "+formatado.format(v.getParticipacaoCategoria())+"%");
+						System.out.println("Taxa de óbito por 100 mil habitantes "+formatado.format(v.getTaxaObito()));
+						System.out.println("----------------------------------------------------------------");
+	                }
+			      }
+		
+	}
+	public void imprimirCaminhao(Acidente v){
+		Tipo t = Tipo.CAMINHAO;
+		
+			DecimalFormat formatado = new DecimalFormat("0.00");
+			if(v != null){
+	            if(v.getTipo().equals(t)){
+	            	System.out.println("----------------------------------------------------------------");
+		    	  System.out.println("Dados referente ao ano "+v.getAno());
+					System.out.println("Tipo da vitima "+v.getTipo());
+				    System.out.println("Total de mortes "+v.getMorteTotal());
+					System.out.println("Paticipação no total  de acidentes "+formatado.format(v.getParticipacaoCategoria())+"%");
+					System.out.println("Taxa de óbito por 100 mil habitantes "+formatado.format(v.getTaxaObito()));
+					System.out.println("----------------------------------------------------------------");
+                }
+		      }
+	}
+	public void imprimirCiclista(Acidente v){
+		Tipo t = Tipo.CICLISTA;
+		DecimalFormat formatado = new DecimalFormat("0.00");
+		if(v != null){
+            if(v.getTipo().equals(t)){
+            	System.out.println("----------------------------------------------------------------");
+	    	  System.out.println("Dados referente ao ano "+v.getAno());
+				System.out.println("Tipo da vitima "+v.getTipo());
+			    System.out.println("Total de mortes "+v.getMorteTotal());
+				System.out.println("Paticipação no total  de acidentes "+formatado.format(v.getParticipacaoCategoria())+"%");
+				System.out.println("Taxa de óbito por 100 mil habitantes "+formatado.format(v.getTaxaObito()));
+				System.out.println("----------------------------------------------------------------");
+            }
+	      }
+	}
+	public void imprimirMoto(Acidente v){
+		Tipo t = Tipo.MOTO;
+		DecimalFormat formatado = new DecimalFormat("0.00");
+		if(v != null){
+            if(v.getTipo().equals(t)){
+            	System.out.println("----------------------------------------------------------------");
+	    	  System.out.println("Dados referente ao ano "+v.getAno());
+				System.out.println("Tipo da vitima "+v.getTipo());
+			    System.out.println("Total de mortes "+v.getMorteTotal());
+				System.out.println("Paticipação no total  de acidentes "+formatado.format(v.getParticipacaoCategoria())+"%");
+				System.out.println("Taxa de óbito por 100 mil habitantes "+formatado.format(v.getTaxaObito()));
+				System.out.println("----------------------------------------------------------------");
+            }
+	      }
+	}
+	public void imprimirOnibus(Acidente v){
+		Tipo t = Tipo.ONIBUS;
+		
+			DecimalFormat formatado = new DecimalFormat("0.00");
+	        if(v != null){
+		            if(v.getTipo().equals(t)){
+		            	System.out.println("----------------------------------------------------------------");
+			    	  System.out.println("Dados referente ao ano "+v.getAno());
+						System.out.println("Tipo da vitima "+v.getTipo());
+					    System.out.println("Total de mortes "+v.getMorteTotal());
+						System.out.println("Paticipação no total  de acidentes "+formatado.format(v.getParticipacaoCategoria())+"%");
+						System.out.println("Taxa de óbito por 100 mil habitantes "+formatado.format(v.getTaxaObito()));
+						System.out.println("----------------------------------------------------------------");
+	                }
+			      }
+	      }
+	
+	public void imprimirOutros(Acidente v){
+		 Tipo t = Tipo.OUTROS;
+				DecimalFormat formatado = new DecimalFormat("0.00");
+			         if(v != null){
+			        	 System.out.println("----------------------------------------------------------------");
+				         
+					      if(v.getTipo().equals(t)){
+					    	  System.out.println("Dados referente ao ano "+v.getAno());
+								System.out.println("Tipo da vitima "+v.getTipo());
+							    System.out.println("Total de mortes "+v.getMorteTotal());
+								System.out.println("Paticipação no total  de acidentes "+formatado.format(v.getParticipacaoCategoria())+"%");
+								System.out.println("Taxa de óbito por 100 mil habitantes "+formatado.format(v.getTaxaObito()));
+								System.out.println("----------------------------------------------------------------");
+		                     }
+					      
+					      }
+		           }
+	
+	public void imprimirAlemanha(DadosPaises dp){
+		
+		DecimalFormat formato = new DecimalFormat("0.00");
+		int total = DadosPaises.getBrasilTotalMortos();
+		double taxa = DadosPaises.getBrasilTaxaObito();
+		Paises pa = Paises.BRASIL;
+				
+		
+			if(dp.getPais().equals(Paises.ALEMANHA)){
+				System.out.println("----------------------------------------------------------------");
+				System.out.println("A "+dp.getPais()+" no ano de 2011 teve um total de "+dp.getTotalMortos()+ " mil mortos em acidente de trânsito enquanto "
+			+ pa+" teve um total de "+total+" mil" );
+				System.out.println(",porém a taxa/100mil habitantes da "+dp.getPais()+" foi de "+dp.getTaxaObito());
+				System.out.println("enquanto a do "+pa+" foi de "+taxa+" ou seja "+formato.format((((taxa/dp.getTaxaObito())*100)-100))+
+						"% mais mortos, em taxa/100mil habitantes, que o  "+dp.getPais());
+				System.out.println("----------------------------------------------------------------");
+				
+			}
+		}
+	public void imprimirArgentina(DadosPaises dp){
+		DecimalFormat formato = new DecimalFormat("0.00");
+		int total = DadosPaises.getBrasilTotalMortos();
+		double taxa = DadosPaises.getBrasilTaxaObito();
+		Paises pa = Paises.BRASIL;
+				
+			if(dp.getPais().equals(Paises.ARGENTINA)){
+				System.out.println("----------------------------------------------------------------");
+				System.out.println("A "+dp.getPais()+" no ano de 2011 teve um total de "+dp.getTotalMortos()+ " mil mortos em acidente de trânsito enquanto "
+			+ pa+" teve um total de "+total+" mil" );
+				System.out.println("Porém a taxa/100mil habitantes da "+dp.getPais()+" foi de "+dp.getTaxaObito());
+				System.out.println("Enquanto a do "+pa+" foi de "+taxa+" ou seja "+formato.format((((taxa/dp.getTaxaObito())*100)-100))+
+						"% mais mortos, em taxa/100mil habitantes, que a  "+dp.getPais());
+				System.out.println("----------------------------------------------------------------");
+			}
+		}
+	
+	public void imprimirChina(DadosPaises dp){
+		DecimalFormat formato = new DecimalFormat("0.00");
+		int total = DadosPaises.getBrasilTotalMortos();
+		double taxa = DadosPaises.getBrasilTaxaObito();
+		Paises pa = Paises.BRASIL;
+				
+			if(dp.getPais().equals(Paises.CHINA)){
+				System.out.println("----------------------------------------------------------------");
+				
+				System.out.println("A "+dp.getPais()+" no ano de 2011 teve um total de "+dp.getTotalMortos()+ " mil mortos em acidente de trânsito enquanto "
+			+ pa+" teve um total de "+total+" mil" );
+				System.out.println("Porém a taxa/100mil habitantes da "+dp.getPais()+" foi de "+dp.getTaxaObito());
+				System.out.println("Enquanto a do "+pa+" foi de "+taxa+" ou seja "+formato.format((((taxa/dp.getTaxaObito())*100)-100))+
+						"% mais acidentes, em taxa/100mil habitantes, que a  "+dp.getPais());
+				System.out.println("----------------------------------------------------------------");
+				
+			}
+		}
+	
+	public void imprimirEstadosUnidos(DadosPaises dp){
+		DecimalFormat formato = new DecimalFormat("0.00");
+		int total = DadosPaises.getBrasilTotalMortos();
+		double taxa = DadosPaises.getBrasilTaxaObito();
+		Paises pa = Paises.BRASIL;
+				
+			if(dp.getPais().equals(Paises.ESTADOS_UNIDOS)){
+				System.out.println("----------------------------------------------------------------");
+				
+				System.out.println("A "+dp.getPais()+" no ano de 2011 teve um total de "+dp.getTotalMortos()+ " mil mortos em acidente de trânsito enquanto "
+			+ pa+" teve um total de "+total+" mil" );
+				System.out.println("Porém a taxa/100mil habitantes da "+dp.getPais()+" foi de "+dp.getTaxaObito());
+				System.out.println("Enquanto a do "+pa+" foi de "+taxa+" ou seja "+formato.format((((taxa/dp.getTaxaObito())*100)-100))+
+						"% mais acidentes, em taxa/100mil habitantes, que a  "+dp.getPais());
+				System.out.println("----------------------------------------------------------------");
+				
+			}
+   }
+	
+	public void imprimirJapao(DadosPaises dp){
+		DecimalFormat formato = new DecimalFormat("0.00");
+		int total = DadosPaises.getBrasilTotalMortos();
+		double taxa = DadosPaises.getBrasilTaxaObito();
+		Paises pa = Paises.BRASIL;
+				
+			if(dp.getPais().equals(Paises.JAPÃO)){
+				System.out.println("----------------------------------------------------------------");
+				System.out.println("A "+dp.getPais()+" no ano de 2011 teve um total de "+dp.getTotalMortos()+ " mil mortos em acidente de trânsito enquanto "
+			+ pa+" teve um total de "+total+" mil" );
+				System.out.println("Porém a taxa/100mil habitantes da "+dp.getPais()+" foi de "+dp.getTaxaObito());
+				System.out.println("Enquanto a do "+pa+" foi de "+taxa+" ou seja "+formato.format((((taxa/dp.getTaxaObito())*100)-100))+
+						"% mais mortos, em taxa/100mil habitantes, que o  "+dp.getPais());
+				System.out.println("----------------------------------------------------------------");
+				
+			}
+			
+		}
+     
+	public void imprimirReinoUnido(DadosPaises dp){
+     
+		DecimalFormat formato = new DecimalFormat("0.00");
+		int total = DadosPaises.getBrasilTotalMortos();
+		double taxa = DadosPaises.getBrasilTaxaObito();
+		Paises pa = Paises.BRASIL;
+				
+		
+			if(dp.getPais().equals(pa)){
+				total = dp.getTotalMortos();
+				taxa = dp.getTaxaObito();
+			}
+			if(dp.getPais().equals(Paises.REINO_UNIDO)){
+				System.out.println("----------------------------------------------------------------");
+				System.out.println("A "+dp.getPais()+" no ano de 2011 teve um total de "+dp.getTotalMortos()+ " mil mortos em acidente de trânsito enquanto "
+			+ pa+" teve um total de "+total+" mil" );
+				System.out.println("Porém a taxa/100mil habitantes da "+dp.getPais()+" foi de "+dp.getTaxaObito());
+				System.out.println("Enquanto a do "+pa+" foi de "+taxa+" ou seja "+formato.format((((taxa/dp.getTaxaObito())*100)-100))+
+						"% mais mortos, em taxa/100mil habitantes, que o  "+dp.getPais());
+				System.out.println("----------------------------------------------------------------");
+				
+			}
+			
+			
+		}
+	   public void imprimirCentroOeste(Acidente acid){	
+			
+			     if(acid != null){
+			      somaCentroOeste = somaCentroOeste + acid.getTotalRegCentroOeste();
+			      cont++;
+			     }
+			     if(cont == 6){
+			      System.out.println("----------------------------------------------------------------");
+			      System.out.println("Total de mortos em acidentes de transito na região Centro-Oeste: "+somaCentroOeste);
+			      System.out.println("----------------------------------------------------------------");
+			      somaCentroOeste = 0;
+			      cont = 0;
+		}
+	   }
+		
+	   public void imprimirNordeste(Acidente acid){	
+		  
+			if(acid != null){
+		       
+			      somaNordeste = somaNordeste + acid.getTotalRegNordeste();
+			      cont++;
+		         }
+			if(cont == 6){
+				System.out.println("----------------------------------------------------------------");
+		        System.out.println("Total de mortos em acidentes de transito na região Nordeste: "+somaNordeste);
+		        System.out.println("----------------------------------------------------------------");
+		        cont = 0;
+		        somaNordeste = 0;
+			}
+		}
+		
+	   public void imprimirNorte(Acidente acid){
+		  
+			
+	        if(acid != null){
+	        	
+			      somaNorte = somaNorte + acid.getTotalRegNorte();
+			      cont++;
+	        }
+	        if(cont == 6){
+	        	System.out.println("----------------------------------------------------------------");  
+	        	System.out.println("Total de mortos em acidentes de transito na região Norte: "+somaNorte);
+	        	System.out.println("----------------------------------------------------------------"); 
+	        	cont = 0;
+	              somaNorte = 0;
+	        }
+		   }
+	   public void imprimirSudeste(Acidente acid){	
+		   
+			if(acid != null){
+		        
+			      somaSudeste = somaSudeste + acid.getTotalRegSudeste();
+			      cont++;
+			}
+			if(cont == 6){
+			System.out.println("----------------------------------------------------------------");	
+			System.out.println("Total de mortos em acidentes de transito na região Sudeste: "+somaSudeste);
+			System.out.println("----------------------------------------------------------------");
+			cont = 0;
+              somaSudeste = 0;
+			}
+	   }
+	   public void imprimirSul(Acidente acid){	
+		  
+			if(acid != null){
+		        
+			      somaSul = somaSul + acid.getTotalRegSul();
+			      cont++;
+			}
+			if (cont == 6){	
+				System.out.println("----------------------------------------------------------------");
+		        System.out.println("Total de mortos em acidentes de transito na região Sul: "+somaSul);
+		        System.out.println("----------------------------------------------------------------");
+		        cont = 0;
+		        somaSul = 0;
+		}
+		}
+	   
+	   public void imprimirCrescente(Acidente acid){
+		    
+		      if(acid != null)lista.add(acid);
+		     
+		      if(lista.size() == 7){
+		     Collections.sort(lista);
+		     
+		     int x = 1; 
+			 System.out.println("Pos|Tipo        |Quantidade de acidentados");
+			 System.out.println("------------------------------------------");
+			 for(Object i : lista){
+				 Acidente acidente = (Acidente) i;
+				 if(acid.getTipo().toString().length()<5){
+						System.out.println(x+"º |"+acid.getTipo()+ "\t|"+ acid.getMorteTotal());
+					}else{
+					 System.out.println(x+"º |"+acid.getTipo()+ "\t|"+ acid.getMorteTotal());
+					}
+				 x++;
+				 
+			 }
+			 System.out.println("");
+			 }
+	   }
+	   public void imprimirDecrescente(Acidente acid){
+		   List lista = new LinkedList<Acidente>();
+		      if(acid != null)lista.add(acid);
+		     
+		      
+		      if(lista.size() == 7){
+		     Collections.sort(lista);
+		     Collections.reverse(lista);
+		     int x = 1; 
+			 System.out.println("Pos|Tipo        |Quantidade de acidentados");
+			 System.out.println("------------------------------------------");
+			 for(Object i : lista){
+				 Acidente acidente = (Acidente) i;
+				 if(acid.getTipo().toString().length()<5){
+						System.out.println(x+"º |"+acid.getTipo()+ "\t|"+ acid.getMorteTotal());
+					}else{
+					 System.out.println(x+"º |"+acid.getTipo()+ "\t|"+ acid.getMorteTotal());
+					}
+				 x++;
+				 
+			 }
+			 System.out.println("");
+			 }
+	   }
+		   
+	   }
+	
+	
+	
+	
+	
+	
+
+	
+	
+			
+	
+	
+	
+	
+	
+ 

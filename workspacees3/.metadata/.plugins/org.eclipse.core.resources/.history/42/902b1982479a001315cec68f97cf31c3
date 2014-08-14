@@ -1,0 +1,75 @@
+import java.util.LinkedList;
+import java.util.List;
+
+
+public class BDAcidente {
+	
+	private List<Acidente>lista;
+	private ImpressaoVitima vitima;
+	private ImprimirVitimaRegiao regiao;
+	private ImpressaoVitimaOdenado ordenado;
+	
+	public BDAcidente(){
+		lista = new LinkedList<Acidente>();
+			}
+	
+    public BDAcidente(ImpressaoVitima vitima){
+    	lista = new LinkedList<Acidente>();
+    	this.vitima = vitima;
+    }
+	public BDAcidente(ImpressaoVitima vitima,ImprimirVitimaRegiao regiao) {
+		lista = new LinkedList<Acidente>();
+		this.vitima = vitima;
+		this.regiao = regiao;
+		
+		
+		
+	}
+	public void setVitima(ImpressaoVitima vitima) {
+		this.vitima = vitima;
+	}
+	public void setRegiao(ImprimirVitimaRegiao regiao) {
+		this.regiao = regiao;
+	}
+	public void setOrdenado(ImpressaoVitimaOdenado ordenado) {
+		this.ordenado = ordenado;
+	}
+	public void addAcidente(Acidente a){
+		lista.add(a);
+	}
+	
+	
+	
+	public void selecionarVitima(){
+		
+		     List<Acidente> l = new LinkedList<Acidente>();
+			   for(Object i : lista){
+				Acidente acid = (Acidente)i;
+				if(acid != null)l.add(acid);
+				
+			}
+			  vitima.imprimirVitima(l);
+		}
+	public void selecionarRegiao(){
+		List<Acidente> l = new LinkedList<Acidente>();
+				for(Object i : lista){
+			Acidente acid = (Acidente) i;
+			if(acid.getReg()!= null){
+			  //  if(acid.getTipo())l.add(acid);
+			}
+		}
+		regiao.imprimirVitimaRegia(l);
+	}
+	
+	public void selecionarOrdem(){
+		List<Acidente> l = new LinkedList<Acidente>();
+		for(Object i:lista){
+			Acidente acid = (Acidente) i;
+			if(ordenado != null)l.add(acid);
+		}
+		ordenado.imprimirOrdenado(l);
+	}
+		
+	}
+
+

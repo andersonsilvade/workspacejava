@@ -1,0 +1,84 @@
+
+public class Teste {
+
+	public static void main(String[] args) {
+		
+		BDAcidente todos = new BDAcidente();
+		
+		/*Pedestre*/
+		Tipo t = Tipo.PEDESTRE;
+		Acidente pedestre = new Acidente(t,11805,27.30,6.1,new Regiao(1271,2965,5200,1813,867) );
+		BDAcidente p = new BDAcidente(new Pedestre(),new Sudeste());
+		todos.addAcidente(pedestre);
+	
+		System.out.println("----------------------");
+		/*Ciclista*/
+		t = Tipo.CICLISTA;
+		Acidente ciclista = new Acidente(t,1884,4.40,1.00,new Regiao(143,405,5200,417,281));
+		BDAcidente c = new BDAcidente(new Ciclista(),new Sul());
+		todos.addAcidente(ciclista);
+		
+		System.out.println("----------------------");
+		
+		/*Moto*/
+		t = Tipo.MOTO;
+		Acidente moto = new Acidente(t,14666,33.90,7.6,new Regiao(1320,5392,4436,2249,1527));
+		todos.addAcidente(moto);
+		
+		System.out.println("----------------------");
+		/*Auto*/
+		t = Tipo.AUTO;
+		Acidente auto = new Acidente(t, 12429,28.70,6.50,new Regiao(605,2975,4948,2539,1415));
+		
+		todos.addAcidente(auto);
+        
+		System.out.println("----------------------");
+		/*Caminhão*/
+		t = Tipo.CAMINHÃO;
+		Acidente caminhao = new Acidente(t,1567,3.60,0.80,new Regiao(89,270,544,363,308));
+		
+		todos.addAcidente(caminhao);
+		
+		System.out.println("----------------------");
+		
+		/*Onibus*/
+		t = Tipo.ONIBUS;
+		Acidente onibus = new Acidente(t,248,0.60,0.1,new Regiao(20,56,97,52, 27));
+		
+		todos.addAcidente(onibus);
+		
+		
+		/*Outros*/
+		t = Tipo.OUTROS;
+		Acidente outros = new Acidente(t,658,1.50,0.3);
+		
+		todos.addAcidente(outros);
+		
+		todos.setVitima(new Pedestre());
+		todos.selecionarVitima();
+		todos.setRegiao(new Norte());
+		todos.selecionarRegiao();
+		
+		todos.setVitima(new Onibus());
+		todos.selecionarVitima();
+		
+		System.out.println("----------------------");
+		
+		BDAcidente vitima = new BDAcidente();
+		vitima.addAcidente(auto);
+		vitima.addAcidente(caminhao);
+		vitima.addAcidente(ciclista);
+		vitima.addAcidente(outros);
+		vitima.addAcidente(onibus);
+		vitima.addAcidente(moto);
+		vitima.addAcidente(pedestre);
+		vitima.setOrdenado(new MenorMaior());
+		vitima.selecionarOrdem();
+		System.out.println("-----------------------");
+		vitima.setOrdenado(new MaiorMenor());
+		vitima.selecionarOrdem();
+		
+		
+	}
+
+}

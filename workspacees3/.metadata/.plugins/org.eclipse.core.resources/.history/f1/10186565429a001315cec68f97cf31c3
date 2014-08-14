@@ -1,0 +1,17 @@
+import java.util.List;
+
+
+public class Nordeste implements ImprimirVitimaRegiao{
+	
+	public void imprimirVitimaRegia(List<Acidente> v){
+		 
+		if(!v.isEmpty()){
+	        for(Object i : v){
+		      Acidente acid = (Acidente)i;
+		      
+		      System.out.println("Total de acidentes de "+acid.getTipo()+" na região Nordestina "+acid.getReg().getNordeste());
+	         }
+	}
+
+}
+}

@@ -1,0 +1,101 @@
+package br.com.eng3.principal;
+import java.util.LinkedList;
+import java.util.List;
+
+import br.com.eng3.paises.DadosPaises;
+import br.com.eng3.tipo.Acidente;
+import br.com.eng3.principal.*;
+
+public class BDAcidente implements Subject {
+	
+	private List<Acidente>lista;
+	private List<Acidente>regiao;
+	private List<DadosPaises>paises;
+	private List<Acidente>ordenacao;
+	private List<Observer> observer  = new LinkedList<Observer>(); 
+	private List<Observer>observerPais = new LinkedList<Observer>();
+	private List<Observer>observerRegiao = new LinkedList<Observer>();
+	private List<Observer>observerOrdenacao = new LinkedList<Observer>();
+	
+	
+	
+	public BDAcidente(){
+		lista = new LinkedList<Acidente>();
+		paises = new LinkedList<DadosPaises>();
+		regiao = new LinkedList<Acidente>();
+		ordenacao = new LinkedList<Acidente>();
+		
+		}
+	//registrar observes
+	public void registrarObserverAcidente(Observer ob1){
+		observer.add(ob1);
+	}
+
+	public void registrarObserverPaises(Observer ob2) {
+		observerPais.add(ob2);
+		}
+	
+	public void registrarObserverRegiao(Observer ob3) {
+		observerRegiao.add(ob3);
+		
+	}
+	
+	public void registrarObserverOrdenar(Observer ob4) {
+		observerOrdenacao.add(ob4);
+		
+	}
+
+
+	//notificar
+	
+     public void notificarObserverAdd(Acidente a){
+		for(Observer ob : observer){
+			ob.updateAcidente(a);
+			}
+	}
+	
+	public void notificarObserverPaises(DadosPaises p) {
+		for(Observer ob : observerPais){
+			ob.updatePaises(p);
+			
+		}
+		}
+	
+	public void notificarObserverRegiao(Acidente acid) {
+		
+		for(Observer ob : observerRegiao){
+			ob.updateRegiao(acid);
+		}
+				
+	}
+
+	public void notificarObserverOrdenar(Acidente acid) {
+		for(Observer ob : observer)
+			ob.updateOrdenado(acid);
+		
+	}
+	
+	//add ao banco
+	public void addAcidente(Acidente a){
+		lista.add(a);
+		notificarObserverAdd(a);
+		
+		}
+	public void addPaises(DadosPaises dp){
+		paises.add(dp);
+		notificarObserverPaises(dp);
+	}
+	public void addRegiao(Acidente a){
+		regiao.add(a);
+		notificarObserverRegiao(a);
+	}
+	public void addOrdenacao(Acidente a ){
+		ordenacao.add(a);
+		notificarObserverOrdenar(a);
+	}
+	
+	
+	
+	}
+
+

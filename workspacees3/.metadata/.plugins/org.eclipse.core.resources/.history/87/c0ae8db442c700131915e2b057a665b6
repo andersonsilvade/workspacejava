@@ -1,0 +1,46 @@
+package br.com.eng3.principal;
+
+import br.com.eng3.paises.China;
+import br.com.eng3.regiao.Nordeste;
+import br.com.eng3.tipo.Acidente;
+import br.com.eng3.tipo.Auto;
+import br.com.eng3.tipo.ImpressaoOrdemDecrescente;
+import br.com.eng3.tipo.Pedestre;
+import br.com.eng3.tipo.Tipo;
+
+public class Teste {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+//		Facade facade = new Facade();
+//		facade.inicializar();
+//		facade.inicializarPais();
+//		
+//		System.err.println("IMPRIMINDO ORDENADO ");
+//		//facade.ordenar(new ImpressaoOrdemCrescente());
+//		System.out.println("");
+//		facade.ordenar(new ImpressaoOrdemDecrescente());
+//		System.out.println("");
+//		System.err.println("IMPRIMINDO POR VITIMA DE ACIDENTE ");
+//		facade.imprimirVitima(new Pedestre());
+//		System.out.println("");
+//		System.err.println("IMPRIMINDO TOTAL DE ACIDENTE POR REGIÃO ");
+//		facade.imprimirRegiao(new Nordeste());
+//		System.out.println("");
+//		System.err.println("IMPRIMINDO COMPARANDO COM OUTROS PAISES ");
+//		facade.compararPais(new China());
+//		
+		BDAcidente bda = new BDAcidente();
+		Tela  tela = new Tela();
+		Auto auto = new Auto(bda, tela);
+		
+		tela.setIpv(auto);
+		bda.registrarObserver1(tela);
+		
+		Acidente acidAuto = new Acidente(Tipo.AUTO,12429,28.70,6.50,605,2975,4948,2539,1415);
+		
+		bda.addAcidente(acidAuto);
+	}
+
+}

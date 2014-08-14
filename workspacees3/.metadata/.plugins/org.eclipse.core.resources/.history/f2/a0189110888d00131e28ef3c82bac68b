@@ -1,0 +1,13 @@
+
+public class Funcionario {
+	
+	private Visualizacao vis;
+
+	public void setVis(Visualizacao vis){
+		this.vis = vis;
+	}
+	
+	
+	
+
+}

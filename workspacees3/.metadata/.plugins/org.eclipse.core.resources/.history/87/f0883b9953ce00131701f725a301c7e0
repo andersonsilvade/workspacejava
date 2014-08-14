@@ -1,0 +1,147 @@
+
+package br.com.eng3.principal;
+
+import br.com.eng3.paises.Alemanha;
+import br.com.eng3.paises.Argentina;
+import br.com.eng3.paises.China;
+import br.com.eng3.paises.DadosPaises;
+import br.com.eng3.paises.EstadosUnidos;
+import br.com.eng3.paises.Japao;
+import br.com.eng3.paises.Paises;
+import br.com.eng3.paises.ReinoUnido;
+import br.com.eng3.regiao.CentroOeste;
+import br.com.eng3.regiao.Nordeste;
+import br.com.eng3.regiao.Norte;
+import br.com.eng3.regiao.Sudeste;
+import br.com.eng3.regiao.Sul;
+import br.com.eng3.tipo.Acidente;
+import br.com.eng3.tipo.Auto;
+import br.com.eng3.tipo.Caminhao;
+import br.com.eng3.tipo.Ciclista;
+import br.com.eng3.tipo.Moto;
+import br.com.eng3.tipo.Onibus;
+import br.com.eng3.tipo.Outros;
+import br.com.eng3.tipo.Pedestre;
+import br.com.eng3.tipo.Tipo;
+
+public class Facade {
+		BDAcidente paises;
+		BDAcidente bda ;
+		BDAcidente regiao;
+	    Tela  tela;
+	    Tela telaPais;
+	    Tela telaRegiao;
+	    
+	    //Tipo Acidente
+	    Auto auto;
+		Pedestre pedestre ;
+		Caminhao caminhao ;
+		Ciclista ciclista ;
+		Moto moto ;
+		Onibus onibus ;
+		Outros outros ;
+		//Pais Acidente
+		China chi ;
+		Argentina arg ;
+		Alemanha ale ;
+		Japao jpn ;
+		ReinoUnido uk ;
+		EstadosUnidos usa ;
+		//Região Acidente
+		CentroOeste centroOeste;
+		Norte norte;
+		Nordeste nordeste;
+		Sudeste sudeste;
+		Sul sul;
+		
+		
+	public void criarMVCAcidente(){
+		bda = new BDAcidente();
+		tela = new Tela();
+		auto = new Auto(bda, tela); //conexao controlle-> model e controller->tela
+		tela.setIpv(auto); //conexao tela->controller
+		bda.registrarObserverAcidente(tela); //conexao model->tela
+		
+		
+	}
+	public void criarMVCPais(){
+		
+	paises = new BDAcidente();
+	telaPais = new Tela();
+	arg = new Argentina(paises, tela);
+	telaPais.setComp(arg);
+	paises.registrarObserverPaises(telaPais);
+	
+	}
+	
+	public void criarMVCRegiao(){
+		regiao = new BDAcidente();
+		telaRegiao = new Tela();
+		sul = new Sul(regiao, telaRegiao);
+		telaRegiao.setIvr(sul);
+		regiao.registrarObserverRegiao(telaRegiao);
+		
+	}
+	
+		
+	public void inicializar(){
+		
+		/*Auto ok*/
+		Acidente acidAuto = new Acidente(Tipo.AUTO,12429,28.70,6.50,605,2975,4948,2539,1415);
+		bda.addAcidente(acidAuto);
+		regiao.addRegiao(acidAuto);
+
+		/*Pedestre ok*/
+		Acidente acidPedestre = new Acidente(Tipo.PEDESTRE,11805,27.30,6.1,1271,2965,5200,1813,867);
+		bda.addAcidente(acidPedestre);
+		regiao.addRegiao(acidPedestre);
+		
+		
+		/*Ciclista ok*/
+		Acidente acidCiclista = new Acidente(Tipo.CICLISTA,1884,4.40,1.00,143,405,5200,417,281);
+		bda.addAcidente(acidCiclista);
+		regiao.addRegiao(acidCiclista);
+		
+		
+		/*Moto ok*/
+	    Acidente acidMoto = new Acidente(Tipo.MOTO,14666,33.90,7.6,1320,5392,4436,2249,1527);
+        bda.addAcidente(acidMoto);
+        regiao.addRegiao(acidMoto);
+        
+        /*Caminhï¿½o ok*/
+		Acidente acidCaminhao = new Acidente(Tipo.CAMINHAO,1567,3.60,0.80,89,270,544,363,308);
+		bda.addAcidente(acidCaminhao);
+		regiao.addRegiao(acidCaminhao);
+					
+		/*Onibus*/
+		Acidente acidOnibus = new Acidente(Tipo.ONIBUS,248,0.60,0.1,20,56,97,52, 27);
+		bda.addAcidente(acidOnibus);
+		regiao.addRegiao(acidOnibus);
+		
+		/*Outros*/
+		Acidente acidOutros = new Acidente(Tipo.OUTROS,658,1.50,0.3);
+		bda.addAcidente(acidOutros);
+		
+	}
+	
+      public void inicializarPais(){
+			
+			DadosPaises chi = new DadosPaises(Paises.CHINA, 275938,20.5);
+			DadosPaises arg = new DadosPaises(Paises.ARGENTINA,5094,12.6);
+			DadosPaises ale = new DadosPaises(Paises.ALEMANHA,3830,4.7);
+			DadosPaises jpn = new DadosPaises(Paises.JAPÃO,6625,5.2);
+			DadosPaises uk = new DadosPaises(Paises.REINO_UNIDO,2278,3.7);
+			DadosPaises usa = new DadosPaises(Paises.ESTADOS_UNIDOS,35490,11.4);
+			//DadosPaises bra = new DadosPaises(Paises.BRASIL, 43077,22.5);
+			//paises.addPaises(bra);
+			paises.addPaises(usa);
+			paises.addPaises(uk);
+			paises.addPaises(jpn);
+			paises.addPaises(ale);
+			paises.addPaises(chi);
+			paises.addPaises(arg);
+			
+		}
+	}
+
+

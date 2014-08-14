@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;br.com.eng3.principal.Subject.notificarObserverAdd(...)&apos; to &apos;notificarObserverAcidente&apos;&#x0D;&#x0A;- Original project: &apos;Trabalho&apos;&#x0D;&#x0A;- Original element: &apos;br.com.eng3.principal.Subject.notificarObserverAdd(...)&apos;&#x0D;&#x0A;- Renamed element: &apos;br.com.eng3.principal.Subject.notificarObserverAcidente(...)&apos;&#x0D;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;notificarObserverAdd&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;br.com.eng3.principal{Subject.java[Subject~notificarObserverAdd~QAcidente;" name="notificarObserverAcidente" references="true" stamp="1400165668564" version="1.0"/>
+</session>

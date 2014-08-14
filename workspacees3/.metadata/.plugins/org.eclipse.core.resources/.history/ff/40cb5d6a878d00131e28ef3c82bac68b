@@ -1,0 +1,23 @@
+import java.util.List;
+import java.util.LinkedList;
+
+public class Estoque {
+	
+	private List<Produto> listaProdutos;
+	
+	public Estoque(){
+		listaProdutos = new LinkedList<Produto>();
+	}
+	
+	public void addProduto(Produto prod){
+		listaProdutos.add(prod);
+	}
+	
+	public Produto buscarProduto(String nome){
+		for(Object i:listaProdutos){
+			Produto prodLocalizado = (Produto)i;
+			if(prodLocalizado.getDesc().equals(nome))return prodLocalizado;
+		}
+		return null;
+		}
+}

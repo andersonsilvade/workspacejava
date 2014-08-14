@@ -1,0 +1,30 @@
+
+public class Facade {
+	
+	private Cadastro c;
+
+	
+
+	public Cadastro getC() {
+		return c;
+	}
+
+	public void setC(Cadastro c) {
+		this.c = c;
+	}
+	
+	public void iniciarlizarCadastro(){
+		 Cadastro cad = new Cadastro();
+		 Usuario usr = new Usuario("Anderson","asa");
+		 cad.addUsuario(usr);
+		 Usuario usr1 = new Usuario("Maria", "marilu");
+		 cad.addUsuario(usr1);
+		 Usuario usr2 = new Usuario("Mauro","shin");
+		 cad.addUsuario(usr1);
+	}
+	
+	public void testarLogin(Usuario usr){
+		   c.logar(usr);
+	}
+
+}

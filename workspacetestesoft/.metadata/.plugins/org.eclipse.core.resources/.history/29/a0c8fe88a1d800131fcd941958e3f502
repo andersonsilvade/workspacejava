@@ -1,0 +1,16 @@
+package br.com.testeSoftware.exer2;
+
+public class PrincipalCaverna {
+
+	public static void main(String[] args) {
+//	 Caverna cav = new Caverna();
+//	 cav.addCirculo();
+//	 cav.removerCirculo();
+
+	 
+	  Caverna2 cav2 = new Caverna2();
+	  cav2.iniciarArray();
+	  cav2.circulo();
+	}
+
+}

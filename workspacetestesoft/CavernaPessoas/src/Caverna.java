@@ -1,0 +1,57 @@
+
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Caverna {
+
+	ArrayList<String> circulo;
+
+	public void addCirculo(int tamanho){
+
+		
+		circulo = new ArrayList<String>();
+		for(int x = 0 ; x <tamanho;x++){
+			String nome;
+			Scanner entrada = new Scanner(System.in);
+			System.out.println("Digite a pessoa");
+			nome = entrada.nextLine();
+			circulo.add(nome);
+		}
+	}
+
+	public void removerCirculo(int posicao,int passo ){
+       
+		int cont = 0;
+		int aux = circulo.size();
+        int aux2 = 0;
+        int c = 1;
+		while(aux!= 1){
+			for(int i = posicao;i < circulo.size();i++){
+				aux2 = i;
+				if(!circulo.isEmpty()){
+					if(cont  == passo){
+						System.out.println("O "+c+"º a morrer é "+circulo.remove(i));
+						cont = 0;
+						aux--;
+						c++;
+						
+					}
+					cont++;
+					
+				}
+
+				}
+			if(aux2 == (circulo.size()-1)){
+				aux2 = 0;
+				posicao  = 0;
+			}
+		}
+		for(int z = 0;z < circulo.size();z++){
+			if(!circulo.isEmpty()){
+				System.out.println("A restou a a pessoa de nome : "+circulo.get(z));
+			}
+		}
+
+	}
+}

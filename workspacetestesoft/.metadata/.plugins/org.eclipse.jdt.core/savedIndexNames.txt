@@ -1,0 +1,4 @@
+INDEX VERSION 1.126+G:\4ºADS\Teste de software\workspacetestesoft\.metadata\.plugins\org.eclipse.jdt.core
+436899666.index
+996610041.index
+685718102.index

@@ -1,0 +1,35 @@
+package br.com.testeSoftware.exer2;
+
+import java.lang.reflect.Array;
+import java.util.Scanner;
+
+public class Caverna2 {
+	
+	int [] circulo;
+	int elementos = 100;
+	int passo = 0;
+	int cont = 0;
+	int posicao = 0;
+	public void iniciarArray(){
+		int tamanho;
+		Scanner entrada = new Scanner(System.in);
+		System.out.println("digite o tamanho do circulo");
+		tamanho = entrada.nextInt();
+		System.out.println("digite o passo ");
+		passo = entrada.nextInt();
+		System.out.println("digite a posição ");
+		posicao = entrada.nextInt();
+		
+		circulo = new int[tamanho];
+		for(int i = 0;i < tamanho;i++){
+			circulo[i] = elementos;
+			elementos = elementos + 10;
+				}
+
+	
+	for(int x = 0 ; x < circulo.length;x++){
+		System.out.println("Elementos do circulo = "+circulo[x]);
+	}
+	}
+
+}

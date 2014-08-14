@@ -1,0 +1,48 @@
+package br.com.testeSoftware.exer2;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Caverna {
+	
+	ArrayList circulo;
+	
+   public void addCirculo(){
+	   System.out.println("digite o tamanho do circulo ");
+	   Scanner entrada = new Scanner(System.in);
+	   Integer tamanho = entrada.nextInt();
+	   circulo = new ArrayList();
+	   for(Integer x = 0 ; x < tamanho;x++){
+		   circulo.add(x);
+	   }
+   }
+ 
+public void removerCirculo(){
+	   Scanner entrada = new Scanner(System.in);
+	   System.out.println("digite a posição inicial");
+	   int posicao = entrada.nextInt()-1;
+	   System.out.println("Passo ");
+	   int passo = entrada.nextInt();
+	   int cont = 0;
+	   
+	   while(circulo.size()!= 1){
+	   for(int i = posicao;i < circulo.size();i++){
+		   cont++;
+		 if(cont == passo){
+		  System.out.println("removendo posição "+ circulo.remove(i));
+		  cont = 0;
+		 }
+		  if(i == (circulo.size()-1)){
+			      posicao  = 0;
+		   }
+		 
+	   }
+	   }
+   for(int z = 0;z < circulo.size();z++){
+	   System.out.println("Posição : "+circulo.size());
+	   System.out.println("Posição : "+circulo.get(z));
+   }
+   
+
+}
+}

@@ -1,0 +1,6 @@
+
+public class PessoaFisica {
+	
+	private String cpf;
+
+}

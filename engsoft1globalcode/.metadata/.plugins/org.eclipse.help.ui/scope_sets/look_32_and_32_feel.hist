@@ -1,0 +1,5 @@
+#Sun Aug 18 16:49:37 BRT 2013
+__DEFAULT__=false
+org.eclipse.sdk.Eclipse.master=true
+org.eclipse.help.ui.localSearch.master=true
+expression=look and feel

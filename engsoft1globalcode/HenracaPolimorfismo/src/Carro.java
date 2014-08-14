@@ -1,0 +1,46 @@
+
+public class Carro {
+	
+	String modelo;
+	String cor;
+	float potencia;
+	
+	public Carro(String modelo, String cor, float potencia) {
+		super();
+		this.modelo = modelo;
+		this.cor = cor;
+		this.potencia = potencia;
+	}
+
+	public String getModelo() {
+		return modelo;
+	}
+
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+
+	public String getCor() {
+		return cor;
+	}
+
+	public void setCor(String cor) {
+		this.cor = cor;
+	}
+
+	public float getPotencia() {
+		return potencia;
+	}
+
+	public void setPotencia(float potencia) {
+		this.potencia = potencia;
+	}
+    public void ligar(){
+    	System.out.println("Chave X");
+    }
+    public void print(){
+    	System.out.println("Modelo: "+getModelo());
+    	System.out.println("Cor: "+getCor());
+    	System.out.println("Potencia: "+getPotencia());
+    }
+}

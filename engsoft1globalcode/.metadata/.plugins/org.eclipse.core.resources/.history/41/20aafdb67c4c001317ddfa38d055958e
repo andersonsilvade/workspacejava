@@ -1,0 +1,25 @@
+package math;
+
+import java.util.Scanner;
+
+public class Raiz {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int n;
+		float raiz;
+		
+	    Scanner sc = new Scanner(System.in);
+			
+		System.out.print("um numero ");
+			
+		n = sc.nextInt();
+		
+		raiz = (float) Math.sqrt(n);
+		
+		System.out.println(raiz);
+
+	}
+
+}

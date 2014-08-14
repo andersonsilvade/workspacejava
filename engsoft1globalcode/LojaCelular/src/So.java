@@ -1,0 +1,4 @@
+
+public enum So {ANDORID,IOS,WINDOWNS_PHONE
+
+}

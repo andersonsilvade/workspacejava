@@ -1,0 +1,12 @@
+
+public class Ford extends Carro{
+
+	public Ford(String modelo, String cor, float potencia) {
+		super(modelo, cor, potencia);
+		// TODO Auto-generated constructor stub
+	}
+	public void ligar(){
+		System.out.println("Chave Z");
+	}
+
+}

@@ -1,0 +1,4 @@
+
+public enum Marca {LG,SAMSUNG,MOTOROLA,STI,ERICSSON,APPLE
+
+}

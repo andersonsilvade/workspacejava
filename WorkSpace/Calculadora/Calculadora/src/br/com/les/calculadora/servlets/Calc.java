@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 //import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,52 +15,65 @@ import br.com.les.calculadora.servelets.exceptions.CalculadoraException;
 /**
  * Servlet implementation class Calc
  */
-//@WebServlet({ "/calc", "/calc2" })
+@WebServlet({ "/calc", "/calc2" })
 public class Calc extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /* **
-     * @see HttpServlet#HttpServlet()
-     */
-    public Calc() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/* **
+	 * 
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public Calc() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void service(HttpServletRequest request, 
+	protected void service(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
-		
+
 		String v2 = request.getParameter("valor2");
 		String v1 = request.getParameter("valor1");
 		String operacao = request.getParameter("op");
-		
-		double val1 = Double.valueOf(v1);
-		double val2 = Double.valueOf(v2);
-		
+
+		if (operacao == null ||  operacao.trim().equals("")) {
+			out.println("<b>Escolha uma operacao!!!</b>");
+			return;
+		}
+
+		double val1 = 0, val2 = 0;
+		try {
+			val1 = Double.valueOf(v1);
+			val2 = Double.valueOf(v2);
+		} catch (NumberFormatException ex) {
+			out.println("<b>Erro Numberformat!!!</b>");
+			return;
+		} catch (Exception e) {
+			out.println("<b>Erro qualquer!!!</b>");
+		}
 		out.println("Calculadora OK!!!");
 		out.println("<br/>v1 = " + v1);
 		out.println("<br/>v2 = " + v2);
 		out.println("<br/>operação = " + operacao);
-		
-		
+
 		try {
-			double resultado = BuilderCalculo.build(operacao).calcular(val1, val2);
-			out.println("<p>Resultado: "+resultado+"</p>");
+			double resultado = BuilderCalculo.build(operacao).calcular(val1,
+					val2);
+			out.println("<p>Resultado: " + resultado + "</p>");
 		} catch (CalculadoraException e) {
 			out.println("<br><b>Erro: </b>");
-			out.println("<i>"+ e.getMessage() +"</i>");
+			out.println("<i>" + e.getMessage() + "</i>");
 			e.printStackTrace();
 		}
-		
+
 		out.println("</body></html>");
 	}
-		
-//http://localhost:8070/Calculadora/
-		//calc2?valor1=10&valor2=20&op=soma
-		
-		}
 
+	// http://localhost:8070/Calculadora/
+	// calc2?valor1=10&valor2=20&op=soma
+
+}

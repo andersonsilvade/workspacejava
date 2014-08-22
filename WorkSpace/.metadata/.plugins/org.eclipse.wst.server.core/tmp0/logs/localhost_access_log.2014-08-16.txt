@@ -1,0 +1,11 @@
+127.0.0.1 - - [16/Aug/2014:17:15:01 -0300] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [16/Aug/2014:17:15:04 -0300] "GET /Lista1/ HTTP/1.1" 404 965
+0:0:0:0:0:0:0:1 - - [16/Aug/2014:17:15:43 -0300] "GET /Lista1/cl?nome=anderson HTTP/1.1" 500 1378
+0:0:0:0:0:0:0:1 - - [16/Aug/2014:17:19:05 -0300] "GET /Lista1/cl?nome=anderson&autor=anderson&ano=2014&editora=anderson&versao=1&telefone=12&contato=12&numeroR=12 HTTP/1.1" 200 183
+0:0:0:0:0:0:0:1 - - [16/Aug/2014:17:20:15 -0300] "GET /Lista1/cl?&autor=anderson&ano=2014&editora=anderson&versao=1&telefone=12&contato=12&numeroR=12 HTTP/1.1" 500 1378
+0:0:0:0:0:0:0:1 - - [16/Aug/2014:17:20:42 -0300] "GET /Lista1/cl?autor=anderson&ano=2014&editora=anderson&versao=1&telefone=12&contato=12&numeroR=12 HTTP/1.1" 500 1378
+0:0:0:0:0:0:0:1 - - [16/Aug/2014:17:20:55 -0300] "GET /Lista1/cl?nome%20=%20anderson&autor=anderson&ano=2014&editora=anderson&versao=1&telefone=12&contato=12&numeroR=12 HTTP/1.1" 500 1378
+0:0:0:0:0:0:0:1 - - [16/Aug/2014:17:21:15 -0300] "GET /Lista1/cl?nome%20=anderson&autor=anderson&ano=2014&editora=anderson&versao=1&telefone=12&contato=12&numeroR=12 HTTP/1.1" 500 1378
+127.0.0.1 - - [16/Aug/2014:17:21:51 -0300] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [16/Aug/2014:17:21:51 -0300] "GET /Lista1/ HTTP/1.1" 404 965
+0:0:0:0:0:0:0:1 - - [16/Aug/2014:17:22:08 -0300] "GET /Lista1/cl?nome=anderson&autor=anderson&ano=2014&editora=anderson&versao=1&telefone=12&contato=12&numeroR=12 HTTP/1.1" 200 183

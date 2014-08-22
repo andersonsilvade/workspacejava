@@ -1,0 +1,29 @@
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet({"/cont"})
+public class Conatdor extends HttpServlet {
+	
+	public Conatdor(){
+		super();
+	}
+	private int contador = 0;
+	
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+			contador++;
+			// pega o escritor
+			PrintWriter out = resp.getWriter();
+			// escreve o texto
+			out.println("<html><body>");
+			out.println("Valor do contador: " + contador);
+			out.println("</body></html>");
+
+}
+}

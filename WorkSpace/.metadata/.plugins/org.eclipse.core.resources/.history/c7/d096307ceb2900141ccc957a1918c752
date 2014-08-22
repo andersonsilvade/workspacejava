@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="cl" method = "post">
+Nome <input type = "text" name = "nome"/>
+</br>
+Autor<input type = "text" name = "ano"/>
+</br>
+Editora <input type = "text" name = "editora"/>
+</br>
+Versao <input type = "text" name = "versao"/>
+</br>
+Telefone<input type = "text" name = "telefone"/>
+</br>
+Contado <input type = "text" name = "contato"/>
+</br>
+NumeroRegistro<input type = "text" name = "numeroR"/>
+</br>
+<input type = 'submit' value = 'Calcular'>
+</form>
+</body>
+</html>
+
+		

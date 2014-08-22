@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="cl" method = "post">
+<font face="Arial" size="3"><b>Nome</b></font> <input type = "text" name = "nome" />
+</br>
+<font face = "Arial" size="3"><b>Autor</b></font><input type = "text" name = "autor"/>
+</br>
+<font face="Arial" size="3"><b>Ano</b></font><input type = "text" name = "ano"/>
+</br>
+<font face="Arial" size="3"><b>Editora</b></font> <input type = "text" name = "editora"/>
+</br>
+<font face="Arial" size="3"><b>Versao</b></font> <input type = "text" name = "versao"/>
+</br>
+<font face="Arial" size="3"><b>Telefone</b></font><input type = "text" name = "telefone"/>
+</br>
+<font face="Arial" size="3"><b>Contado</b></font> <input type = "text" name = "contato"/>
+</br>
+<font face="Arial" size="3"><b>NumeroRegistro</b></font><input type = "text" name = "numeroR"/>
+</br>
+<input type = 'submit' value = 'Cadastrar'>
+</form>
+</body>
+</html>
+
+		

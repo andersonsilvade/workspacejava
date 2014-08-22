@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="cl" method = "post">
+Nome <input type = "text" name = "nome"/>
+Autor<input type = "text" name = "ano"/>
+Editora <input type = "text" name = "editora"/>
+Versao <input type = "text" name = "versao"/>
+Telefone<input type = "text" name = "telefone"/>
+Contado <input type = "text" name = "contato"/>
+NumeroRegistro<input type = "text" name = "numeroR"/>
+</form>
+</body>
+</html>
+
+		String numeroRegistro = request.getParameter("numeroR");

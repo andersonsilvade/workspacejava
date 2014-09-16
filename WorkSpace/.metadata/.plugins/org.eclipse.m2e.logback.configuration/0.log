@@ -64,3 +64,6 @@ org.eclipse.core.internal.resources.ResourceException: Resource '/Calculadora' d
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591) [org.eclipse.equinox.launcher_1.3.0.v20130327-1440.jar:na]
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1450) [org.eclipse.equinox.launcher_1.3.0.v20130327-1440.jar:na]
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1426) [org.eclipse.equinox.launcher_1.3.0.v20130327-1440.jar:na]
+2014-09-10 09:40:21,921 [main] INFO  org.eclipse.jetty.server.Server - jetty-8.1.10.v20130312
+2014-09-10 09:40:22,077 [main] INFO  o.e.jetty.server.AbstractConnector - Started SelectChannelConnector@0.0.0.0:50030
+2014-09-10 09:45:07,685 [main] INFO  o.e.j.server.handler.ContextHandler - stopped o.e.j.s.ServletContextHandler{/wse,null}

@@ -1,0 +1,8 @@
+package br.com.exemplo1;
+
+public class Usuario {
+	
+	private String nomeUsuario;
+	private Cachorro cachorro;
+
+}

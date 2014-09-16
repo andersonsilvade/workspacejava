@@ -1,0 +1,9 @@
+INDEX VERSION 1.126
+G:\workspacejava\workspacejava\WorkSpace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2841403707.index
+\Exemplos JSTL\src
+G:\workspacejava\workspacejava\WorkSpace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1457225875.index
+\Lista1JSP\src
+G:\workspacejava\workspacejava\WorkSpace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\935620138.index
+\ExemplosJSP\src
+G:\workspacejava\workspacejava\WorkSpace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3605176411.index
+\ExemplosJSP\src

@@ -1,0 +1,19 @@
+package br.com.lista1JSP.exer3;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+
+@WebServlet("/tabuada")
+public class Tabuada extends HttpServlet{{
+      
+	public static  int = 0;
+	
+	
+}
+	
+	
+	
+	
+
+}

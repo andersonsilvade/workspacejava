@@ -1,0 +1,4 @@
+127.0.0.1 - - [15/Sep/2014:07:24:59 -0300] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [15/Sep/2014:07:25:01 -0300] "GET /Exemplos_JSTL/UsuarioCa.jsp HTTP/1.1" 500 2656
+0:0:0:0:0:0:0:1 - - [15/Sep/2014:07:28:16 -0300] "GET /Exemplos_JSTL/UsuarioCa.jsp HTTP/1.1" 500 2656
+0:0:0:0:0:0:0:1 - - [15/Sep/2014:07:28:33 -0300] "GET /Exemplos_JSTL/UsuarioCa.jsp HTTP/1.1" 200 296

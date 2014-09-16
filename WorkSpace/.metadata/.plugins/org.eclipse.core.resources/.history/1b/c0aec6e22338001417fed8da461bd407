@@ -1,0 +1,42 @@
+package br.com.lista1JSP.exer3;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+
+@WebServlet({"/tabuada"})
+public class Tabuada extends HttpServlet{
+      
+	 public static final String T = "0";
+	 
+	 public Tabuada(){
+		 super();
+	 }
+	 public void service (HttpServletRequest request ,HttpServletResponse response){
+	 String valor = request.getParameter("numero");
+	 
+	 
+	 
+	 request.setAttribute(T,valor);
+	 
+	 RequestDispatcher rd = request.getRequestDispatcher("tabuada.jsp");
+	 
+	 
+	 
+	 
+	 }
+	 
+	
+	 }
+	
+
+	
+	
+	
+	
+
+
